@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450c01f60e94f484ab5944c549ab43c6, type: 3}
+  m_Name: New
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 53fc2523062a1624f8839574239a7d83, type: 2}
+  color: {r: 0.11516906, g: 0.8930817, b: 0.08706128, a: 1}
+  size: 0.45
+  speed: 20
+  spawnRange: {x: 5.56, y: 4.57, z: 17.73}
+  spawnRate: 8.03
+  lifetime: 10

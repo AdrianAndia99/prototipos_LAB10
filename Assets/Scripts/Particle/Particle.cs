@@ -1,24 +1,31 @@
 using UnityEngine;
 
-public class Particle : MonoBehaviour
+public class Particle
 {
-    private Vector3 Position;
-    private Vector3 Velocity;
-    private float Lifetime;
-    private float Age;
-    private TypeParticle TypeParticle;
-    public Particle(Vector3 position, Vector3 velocity, float lifetime, TypeParticle typeParticle)
+    private GameObject _gameObject;
+    private Vector3 _velocity;
+    private float _lifetime;
+    private float _age;
+    private TypeParticle _typeParticle;
+
+    public Particle(GameObject gameObject, Vector3 velocity, float lifetime, TypeParticle typeParticle)
     {
-        Position = position;
-        Velocity = velocity;
-        Lifetime = lifetime;
-        TypeParticle = typeParticle;
+        _gameObject = gameObject;
+        _velocity = velocity;
+        _lifetime = lifetime;
+        _typeParticle = typeParticle;
+        _age = 0f;
     }
 
     public bool Actualization(float deltaTime)
     {
-        Age += deltaTime;
-        Position += Velocity * deltaTime;
-        return Age < Lifetime;
+        _age += deltaTime;
+        _gameObject.transform.position += _velocity * deltaTime;
+        return _age < _lifetime;
+    }
+
+    public void DestroyParticle()
+    {
+        GameObject.Destroy(_gameObject);
     }
 }

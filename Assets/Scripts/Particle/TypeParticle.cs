@@ -1,34 +1,36 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class TypeParticle
 {
-    private Material Material;
-    private Color Color;
-    private float Speed;
-    private float Size;
+    public readonly Material Material;
+    public readonly Color Color;
+    public readonly float Speed;
+    public readonly float Size;
 
-    private static readonly List<TypeParticle> Particle = new List<TypeParticle>();
-    private TypeParticle(Material material, Color color, float speed, float size)
+    private static readonly List<TypeParticle> _particleTypes = new List<TypeParticle>();
+
+    private TypeParticle(ParticleConfigSO config)
     {
-        Material = material;
-        Color = color;
-        Speed = speed;
-        Size = size;
+        Material = config.material;
+        Color = config.color;
+        Speed = config.speed;
+        Size = config.size;
     }
-    public static TypeParticle GetParticleType(Material material, Color color, float speed, float size)
+
+    public static TypeParticle GetParticleType(ParticleConfigSO config)
     {
-        for (int i = 0; i < Particle.Count; i++)
+        for (int i = 0; i < _particleTypes.Count; i++)
         {
-            TypeParticle instance = Particle[i];
-            if (instance.Material == material && instance.Color == color && instance.Speed == speed && instance.Size == size)
+            TypeParticle type = _particleTypes[i];
+            if (type.Material == config.material && type.Color == config.color && type.Speed == config.speed && type.Size == config.size)
             {
-                return instance;
+                return type;
             }
         }
 
-        TypeParticle newType = new TypeParticle(material, color, speed, size);
-        Particle.Add(newType);
+        TypeParticle newType = new TypeParticle(config);
+        _particleTypes.Add(newType);
         return newType;
     }
 }
