@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &23798599
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5242,9 +5242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c087c9b9b530e45a09c3047e7b46d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticlePrefab: {fileID: 6127194152842779238, guid: 046ef03263c349744afc37d0dd652cb6, type: 3}
-  ParticleMaterial: {fileID: 2100000, guid: 53fc2523062a1624f8839574239a7d83, type: 2}
-  ParticleColor: {r: 1, g: 1, b: 1, a: 1}
+  _particlePrefab: {fileID: 6127194152842779238, guid: 046ef03263c349744afc37d0dd652cb6, type: 3}
+  _particleMaterial: {fileID: 2100000, guid: 53fc2523062a1624f8839574239a7d83, type: 2}
+  _particleColor: {r: 0.9433962, g: 0.3589651, b: 0.3589651, a: 1}
+  _particleSpeed: 10.8
+  _particleSize: 1.2
+  _spawnRate: 4.13
+  _spawnRange: {x: 1, y: 8.71, z: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

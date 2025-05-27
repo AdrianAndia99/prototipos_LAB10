@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TypeParticle : MonoBehaviour
+public class TypeParticle
 {
     private Material Material;
     private Color Color;
